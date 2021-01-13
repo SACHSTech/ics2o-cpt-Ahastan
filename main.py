@@ -9,6 +9,7 @@ BLACK    = (   0,   0,   0)
 WHITE    = ( 255, 255, 255)
 GREEN    = (   0, 255,   0)
 RED      = ( 255,   0,   0)
+
  
 pygame.init()
   
@@ -16,7 +17,7 @@ pygame.init()
 size = (700, 500)
 screen = pygame.display.set_mode(size)
  
-pygame.display.set_caption("My Game")
+pygame.display.set_caption("Test game")
  
 #Loop until the user clicks the close button.
 done = False

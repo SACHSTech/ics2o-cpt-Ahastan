@@ -11,15 +11,15 @@ score_4 = 0
 score_5 = 0
 
 # Initalize while loop (boolean) variables
-level_11 = False
-level_12 = False
+guess_1 = False
+guess_2 = False
 
 # Asking user for their name so the game can adress the user by their name
 name = input(("\nTo start, what is your name soilder? "))
 print ("When answering questions, type the answer with each of the words starting with a captital letter. Example: True, or Yes, or Security Software")
 
 # First bit of user input telling them to advance; instructions for the user; storyline
-start_game = input("\nYou are now on the loading screen. Type start to continue to the instructions. ")
+start_game = input("\nYou are now on the loading screen. Type Start to continue to the instructions. ")
 if start_game == "Start":  
     print ("\nColonel: The president has been held hostage by an unidentified group. It is your job to rescue him. We will be dropping you off on the back side of their base. Sources have confirmed there are at least 5 guards in your path, including the guard with the president. In order to save the president, answer at least 8/11 questions correctly. ")
     print ("\nColonel: Good luck " + name)
@@ -35,32 +35,32 @@ if start_game == "Start":
     print ("You have entered the unidentified groups territory. To get past the first guard, correctly answer 2/2 questions. You have unlimited tries for the first level. ")
     
     # Using while loops to ask questions as they have unlimited tries for the first level
-    while level_11 == False:
+    while guess_1 == False:
         first_question = input("\n1. How much informaiton is stored in a byte? ")
         if first_question == "8 Bits":
             print ("Excellent! You got the first question right. ")
             score_1 = score_1 + 1
             total_score = total_score + 1
-            level_11 = True
+            guess_1 = True
         elif first_question == "8 bits":
             print ("Remember, you must answer with each of your words in capital (8 Bits). Try again.")
         else:
             print ("You guessed it wrong")
 
     print("\nA. Process\nB. Input\nC. Storage\nD. Output")
-    while level_12 == False:
-        second_question = input("2. List the information processing Cycle in order (Use commas to separate, ex. C, D, A, B) ")
+    while guess_2 == False:
+        second_question = input("2. List the information processing Cycle in order (Use commas to separate, ex. C, D, A, B): ")
         if second_question == "B, A, D, C":
             print("Excellent! You got the second question right. ")
             score_1 = score_1 + 1
             total_score = total_score + 1
-            level_12 = True
+            guess_2 = True
         else:
             print("You guessed it wrong")
     
     # Printing user score and asking if they are ready to advance (Should be 2/2 as they have unlimited tries)
     print ("\nYour score is " + str(score_1) + "/2. " + "Your total score is" + str(total_score) + "/2. You may advance to the next level.")
-    second_level_ready = input ("Are you ready to move onto the next level? (Yes/No)")
+    second_level_ready = input ("Are you ready to move onto the next level? (Yes/No) ")
     while second_level_ready != "Yes":
         print("Its O.K " + name + " take a breather.")
         second_level_ready =  input("Type Yes when you are ready: ")  
@@ -90,7 +90,7 @@ if start_game == "Start":
             print("Wrong answer. Please try again")
     # Printing user score and asking if they are ready
     print ("\nYour score is " + str(score_2) + "/2 and your total score is " + str(total_score) + "/4.")
-    third_level_ready = input ("Are you ready to move onto the next level? (Yes/No)")
+    third_level_ready = input ("Are you ready to move onto the next level? (Yes/No) ")
     while third_level_ready != "Yes":
         third_level_ready =  input("Type Yes when you are ready: ")  
     
@@ -102,7 +102,7 @@ if start_game == "Start":
     # Asking questions through for loops and if statments
     for i in range (2):
         fifth_question = input("\nMega/Gigabytes per second measures how much data can be _____? ")
-        if fifth_question == "transferred" or "Transferred":
+        if fifth_question == "Transferred":
             print("Excellent, you got the first question correct.")
             score_3 = score_3 + 1
             total_score = total_score + 1
@@ -118,10 +118,10 @@ if start_game == "Start":
         print ("You got the question wrong.")
     # Printing user score and asking if they want to move on
     print ("\nYour score for this level is " + str(score_3) + "/2 and your total score is " + str(total_score) + "/6.")
-    fourth_level_ready = input ("Are you ready to move onto the next level? (Yes/No)")
-    while fourth_level_ready != "Yes":
+    progress_ready = input ("You will now be notified of your progress. Are you ready? (Yes/No) ")
+    while progress_ready != "Yes":
         print("Take a breather.")
-        fourth_level_ready =  input("Type Yes when you are ready: ")  
+        progress_ready =  input("Type Yes when you are ready: ")  
     
     # Checking up on the users progress
     if total_score >= 4:
@@ -130,17 +130,44 @@ if start_game == "Start":
         print ("\nYou are doing decent. You need to answer the next 4 questions correctly in order to save the president. ")
     else:
         print ("\nYou are not doing good. Do not worry, keep going. ")
+
+    minigame_introduction = input ("Are you ready to move on? (Yes/No) ")
+    while minigame_introduction != "Yes":
+        print("Take a breather.")
+        minigame_introduction =  input("Type Yes when you are ready: ")  
     
+    # Introduction to plot twist in the game
+    print("Oh no! It has been found out that the president is no longer at the base you are in. Get to the control room quick!")
+    print("You are approaching the contorl room, however the door is locked. In order to unlock the door, guess the number that the computer is guessing from 1-10. You have unlimited tries.")
+    minigame_ready = input ("Ready to play the game? (Yes/No) ")
+    while minigame_ready != "Yes":
+        print("Take a breather.")
+        minigame_ready =  input("Type Yes when you are ready: ")
+
+    # Mini game
+    my_number = 6
+    guess = int(input("Enter a number from 1-10: "))
+    while guess != my_number:
+        print ("You got it wrong. Try again. ")
+        guess = int(input("Enter a number from 1-10: "))
+    
+    print ("Good, you got it correct. You may advance. ")
+    
+    fourth_level_ready = input ("Are you ready to move on? (Yes/No) ")
+    while fourth_level_ready != "Yes":
+        print("Take a breather.")
+        fourth_level_ready =  input("Type Yes when you are ready: ") 
+
     # Introduction to level 4
     print("\n<<<<LEVEL 4>>>>")
-    print ("Now entering level 4. Take some time to rest and restock. Guards are now heavily armed.")
+    print ("Now entering level 4. You have taken your jeep, and now approaching the fleet of cars with the president. There are three cars in total. Take out the two on either side of you, and resuce the president in the last one. ")
     print ("You only have 1 chance to answer each of the questions.")
-    questions_four_ready = input ("\nAre you ready to move onto the next level? (Yes/No)")
+    questions_four_ready = input ("\nAre you ready to move onto the next level? (Yes/No) ")
     while questions_four_ready != "Yes":
         questions_four_ready =  input("Type Yes when you are ready: ")  
     
     # Asking questions through if statments
-    seventh_question = input("\nHas there been an increasing amount of mental illnesses (especially within teens) due to the prolonged use of technology? (Yes/No)")
+    seventh_question = input("\nHas there been an increasing amount of mental illnesses (especially within teens) due to the prolonged use of technology? (Yes/No) ")
     if seventh_question == "Yes":
         print ("Great, you got the first question correct.")
         score_4 = score_4 + 1
@@ -157,24 +184,25 @@ if start_game == "Start":
     
     # Printing user score
     print ("\nYour score for this level is " + str(score_4) + "/2 and your total score is " + str(total_score) + "/8.")
-    fifth_level_ready = input ("Are you ready to move onto the next level? (Yes/No)")
+    fifth_level_ready = input ("Are you ready to move onto the next level? (Yes/No) ")
     while fifth_level_ready != "Yes":
         fifth_level_ready =  input("Type Yes when you are ready: ")  
     
     # Introduction to Level 5
     print ("\n<<<<LEVEL 5>>>>")
+    print ("Excellent, you shot down the tires on each of the cars. You are coming side by side from the last car.")
     print ("President: Oh thank god you're here " + name + ". I've been trapped here for so long. Quick, untie me and let's get out before Brutus catches us!")
     print("*Unties President*")
     print ("\nBrutus: Not so fast soilder. I never said you could take the president. ")
     print ("FINAL FACEOFF AGAINST BRUTUS! You have three questions, with 3 tries for the first question, 1 try for the second question and 3 tries for the last question")
     
     # Asking if they are ready in order to cut off some text (Makes it easier for them to read)
-    questions_fifth_ready = input ("\nAre you ready to move onto the next level? (Yes/No)")
+    questions_fifth_ready = input ("\nAre you ready to move onto the next level? (Yes/No) ")
     while questions_fifth_ready != "Yes":
         questions_fifth_ready =  input("Type Yes when you are ready to start: ")  
     
     # Asking final questions
-    ninth_question = input("\nWhat type of malware records everything you type on your computer?")
+    ninth_question = input("\nWhat type of malware records everything you type on your computer? ")
     for i in range (3):
         if ninth_question == "Keyloggers":
             print ("Great, you got the first question right")
@@ -183,7 +211,7 @@ if start_game == "Start":
             break
         else:
             print ("You got it wrong. Do not worry. ")
-    tenth_question = input("\n(True/False) You can apply to medical school with a computer science degree ")
+    tenth_question = input("\n(True/False) You can apply to medical school with a computer science degree: ")
     if tenth_question == "True":
         print("Excellent, you got it right.")
         score_5 = score_5 + 1
@@ -202,18 +230,18 @@ if start_game == "Start":
     
     # Seeing if the user won or not
     print ("\nComputer: Alright soilder. Let's see if you saved the president or not.")
-    print ("Your final score was" + str(total_score) + "/11.")
+    print ("Your final score was " + str(total_score) + "/11.")
 
-    final_statement_ready = input ("\nAre you ready to move on? (Yes/No)")
+    final_statement_ready = input ("\nAre you ready to move on? (Yes/No) ")
     while second_level_ready != "Yes":
         second_level_ready =  input("Type Yes when you are ready to hear the results: ") 
 
     if total_score >= 8:
         print ("\n<<<<CONGRATULATIONS, YOU SAVED THE PRESIDENT>>>>")
-        print ("You made it out of the base unharmed with the president. Once you made it back home, you were treated for your injuries, then was awarded the Medal of Honor from the president himself.")
+        print ("You made it out of the car unharmed with the president. Brutus was destroyed. Once you made it back home, you were treated for your injuries, then was awarded the Medal of Honor from the president himself.")
         print ("You are now appointed as the president's personal bodyguard. ")
     else:
-        print ("\nSorry, " + name + " you did not save the president. Although you made it out fine, the president is still stuck at the base. The S.W.A.T team has taken over the rescue.")
+        print ("\nSorry, " + name + " you did not save the president. Although you made it out fine, the president has been moved to an unknown base. The S.W.A.T team has taken over the rescue.")
     
     # Closing statment
     print ("\n<<<<THANK YOU FOR PLAYING>>>>")

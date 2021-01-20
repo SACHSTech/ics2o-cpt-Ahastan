@@ -1,6 +1,6 @@
 
 # Welcome the user
-print ("<<<<<Welcome to ______!>>>>")
+print ("<<<<<WELCOME TO PRESIDENT DOWN!>>>>")
 
 # Initalize future variables
 total_score = 0
@@ -47,7 +47,7 @@ if start_game == "Start":
         else:
             print ("You guessed it wrong")
 
-    print("\nA. Process\nB. Input\nC. Storage\nD. Output")
+    print("\nAssess the following informaiton:\nA. Process\nB. Input\nC. Storage\nD. Output")
     while guess_2 == False:
         second_question = input("2. List the information processing Cycle in order (Use commas to separate, ex. C, D, A, B): ")
         if second_question == "B, A, D, C":
@@ -59,7 +59,7 @@ if start_game == "Start":
             print("You guessed it wrong")
     
     # Printing user score and asking if they are ready to advance (Should be 2/2 as they have unlimited tries)
-    print ("\nYour score is " + str(score_1) + "/2. " + "Your total score is" + str(total_score) + "/2. You may advance to the next level.")
+    print ("\nYour score is " + str(score_1) + "/2. " + "Your total score is " + str(total_score) + "/2. You may advance to the next level.")
     second_level_ready = input ("Are you ready to move onto the next level? (Yes/No) ")
     while second_level_ready != "Yes":
         print("Its O.K " + name + " take a breather.")
@@ -193,6 +193,11 @@ if start_game == "Start":
     print ("Excellent, you shot down the tires on each of the cars. You are coming side by side from the last car.")
     print ("President: Oh thank god you're here " + name + ". I've been trapped here for so long. Quick, untie me and let's get out before Brutus catches us!")
     print("*Unties President*")
+
+    # While loop to make text easier to read
+    brutus_ready = input ("Are you ready to leave the base? (Yes/No) ")
+    while brutus_ready != "Yes":
+        brutus_ready =  input("Type Yes when you are ready: ") 
     print ("\nBrutus: Not so fast soilder. I never said you could take the president. ")
     print ("FINAL FACEOFF AGAINST BRUTUS! You have three questions, with 3 tries for the first question, 1 try for the second question and 3 tries for the last question")
     
@@ -229,7 +234,7 @@ if start_game == "Start":
             print ("You got it wrong")
     
     # Seeing if the user won or not
-    print ("\nComputer: Alright soilder. Let's see if you saved the president or not.")
+    print ("\nAlright soilder. Let's see if you saved the president or not.")
     print ("Your final score was " + str(total_score) + "/11.")
 
     final_statement_ready = input ("\nAre you ready to move on? (Yes/No) ")

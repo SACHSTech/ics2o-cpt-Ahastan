@@ -167,8 +167,8 @@ if start_game == "Start":
         questions_four_ready =  input("Type Yes when you are ready: ")  
     
     # Asking questions through if statments
-    seventh_question = input("\nHas there been an increasing amount of mental illnesses (especially within teens) due to the prolonged use of technology? (Yes/No) ")
-    if seventh_question == "Yes":
+    seventh_question = input("\nThere been an increasing amount of mental illnesses (especially within teens) due to the prolonged use of technology. (True/False) ")
+    if seventh_question == "True":
         print ("Great, you got the first question correct.")
         score_4 = score_4 + 1
         total_score = total_score + 1

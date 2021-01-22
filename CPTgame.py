@@ -1,6 +1,6 @@
 
 # Welcome the user
-print ("<<<<<WELCOME TO PRESIDENT DOWN!>>>>")
+print ("<<<<<WELCOME TO OPERATION: PRESIDENT DOWN!>>>>")
 
 # Initalize future variables
 total_score = 0
@@ -32,7 +32,8 @@ if start_game == "Start":
 
     # Introduction to the first level
     print ("\n<<<<LEVEL 1>>>>")
-    print ("You have entered the unidentified groups territory. To get past the first guard, correctly answer 2/2 questions. You have unlimited tries for the first level. ")
+    print ("You have entered the unidentified groups territory. There is the first guard! Gear up before you go soldier.")
+    print(" To get past the first guard, correctly answer 2/2 questions. The first level is a practice round, so you have unlimited tries for the first level. ")
     
     # Using while loops to ask questions as they have unlimited tries for the first level
     while guess_1 == False:
@@ -68,7 +69,7 @@ if start_game == "Start":
     # Introduction to level 2
     print ("\n<<<<LEVEL 2>>>>")
     print("Congratulations you have cleared the first level.")
-    print("Now entering second level. Gear up " + name + ". You have 1 try to answer the first question, and three for the second question. Good luck.")
+    print("You are now entering the second level. The guards still don't know you're here so keep quiet " + name + ". You have 1 try to answer the first question, and three for the second question. Good luck.")
    
     # Questions for level 2 using if statments and for loops
     third_question = input("\n1. (True/False) The CPU is essentially the brain of the computer. ")
@@ -135,24 +136,22 @@ if start_game == "Start":
     while minigame_introduction != "Yes":
         print("Take a breather.")
         minigame_introduction =  input("Type Yes when you are ready: ")  
-    
+
     # Introduction to plot twist in the game
-    print("Oh no! It has been found out that the president is no longer at the base you are in. Get to the control room quick!")
-    print("You are approaching the contorl room, however the door is locked. In order to unlock the door, guess the number that the computer is guessing from 1-10. You have unlimited tries.")
-    minigame_ready = input ("Ready to play the game? (Yes/No) ")
-    while minigame_ready != "Yes":
-        print("Take a breather.")
-        minigame_ready =  input("Type Yes when you are ready: ")
+    print("\nOh no! It has been found out that the president is no longer at the base you are in. Get to the control room quick!")
+    print("You are approaching the contorl room, however the door is locked. In order to unlock the door, guess the number that the computer is guessing from 1-10. Otherwise, you can choose another game.")
 
     # Mini game
     my_number = 6
-    guess = int(input("Enter a number from 1-10: "))
+    guess = int(input("\nEnter a number from 1-10: "))
     while guess != my_number:
         print ("You got it wrong. Try again. ")
         guess = int(input("Enter a number from 1-10: "))
     
     print ("Good, you got it correct. You may advance. ")
-    
+
+
+    # Getting ready for fourth level
     fourth_level_ready = input ("Are you ready to move on? (Yes/No) ")
     while fourth_level_ready != "Yes":
         print("Take a breather.")
@@ -198,7 +197,7 @@ if start_game == "Start":
     brutus_ready = input ("Are you ready to leave the base? (Yes/No) ")
     while brutus_ready != "Yes":
         brutus_ready =  input("Type Yes when you are ready: ") 
-    print ("\nBrutus: Not so fast soilder. I never said you could take the president. ")
+    print ("\nBrutus: Not so fast soldier. I never said you could take the president. ")
     print ("FINAL FACEOFF AGAINST BRUTUS! You have three questions, with 3 tries for the first question, 1 try for the second question and 3 tries for the last question")
     
     # Asking if they are ready in order to cut off some text (Makes it easier for them to read)
@@ -234,7 +233,7 @@ if start_game == "Start":
             print ("You got it wrong")
     
     # Seeing if the user won or not
-    print ("\nAlright soilder. Let's see if you saved the president or not.")
+    print ("\nAlright soldier. Let's see if you saved the president or not.")
     print ("Your final score was " + str(total_score) + "/11.")
 
     final_statement_ready = input ("\nAre you ready to move on? (Yes/No) ")

@@ -139,16 +139,31 @@ if start_game == "Start":
 
     # Introduction to plot twist in the game
     print("\nOh no! It has been found out that the president is no longer at the base you are in. Get to the control room quick!")
-    print("You are approaching the contorl room, however the door is locked. In order to unlock the door, guess the number that the computer is guessing from 1-10. Otherwise, you can choose another game.")
+    print("You are approaching the contorl room, however the door is locked. In order to unlock the door, choose a game you want to play.")
 
-    # Mini game
-    my_number = 6
-    guess = int(input("\nEnter a number from 1-10: "))
-    while guess != my_number:
-        print ("You got it wrong. Try again. ")
-        guess = int(input("Enter a number from 1-10: "))
-    
-    print ("Good, you got it correct. You may advance. ")
+    minigame_ready = False
+    while minigame_ready == False:
+        game = input("\nWould you like to play Number Guessing (1) or Code Guessing(2)? (Choose 1 or 2): ") 
+        if game == "1":
+            my_number = 6
+            guess = int(input("\nEnter a number from 1-10: "))
+            while guess != my_number:
+                print ("You got it wrong. Try again. ")
+                guess = int(input("Enter a number from 1-10: "))
+            print ("Good, you got it correct. You may advance. ")
+            minigame_ready = True
+        
+        elif game == "2":
+            my_code = 1432
+            second_guess = int(input("\nGuess my 4-digit code (Numbers range from 1-4): "))
+            while second_guess != my_code:
+                print ("You got it wrong. Try again. ")
+                guess_2 = int(input("Guess my code from 1-4: "))
+            print ("Good, you got it correct.")
+            minigame_ready = True
+        else:
+            print ("\nPlease enter an option.")
+            game = input("Would you like to play Number Guessing (1) or Code Guessing(2)? (Choose 1 or 2): ")
 
 
     # Getting ready for fourth level
@@ -161,10 +176,7 @@ if start_game == "Start":
     print("\n<<<<LEVEL 4>>>>")
     print ("Now entering level 4. You have taken your jeep, and now approaching the fleet of cars with the president. There are three cars in total. Take out the two on either side of you, and resuce the president in the last one. ")
     print ("You only have 1 chance to answer each of the questions.")
-    questions_four_ready = input ("\nAre you ready to move onto the next level? (Yes/No) ")
-    while questions_four_ready != "Yes":
-        questions_four_ready =  input("Type Yes when you are ready: ")  
-    
+
     # Asking questions through if statments
     seventh_question = input("\nThere been an increasing amount of mental illnesses (especially within teens) due to the prolonged use of technology. (True/False) ")
     if seventh_question == "True":
@@ -193,15 +205,12 @@ if start_game == "Start":
     print ("President: Oh thank god you're here " + name + ". I've been trapped here for so long. Quick, untie me and let's get out before Brutus catches us!")
     print("*Unties President*")
 
-    # While loop to make text easier to read
-    brutus_ready = input ("Are you ready to leave the base? (Yes/No) ")
-    while brutus_ready != "Yes":
-        brutus_ready =  input("Type Yes when you are ready: ") 
+
     print ("\nBrutus: Not so fast soldier. I never said you could take the president. ")
     print ("FINAL FACEOFF AGAINST BRUTUS! You have three questions, with 3 tries for the first question, 1 try for the second question and 3 tries for the last question")
     
     # Asking if they are ready in order to cut off some text (Makes it easier for them to read)
-    questions_fifth_ready = input ("\nAre you ready to move onto the next level? (Yes/No) ")
+    questions_fifth_ready = input ("\nReady to face-off against Brutus? (Yes/No) ")
     while questions_fifth_ready != "Yes":
         questions_fifth_ready =  input("Type Yes when you are ready to start: ")  
     
@@ -242,7 +251,7 @@ if start_game == "Start":
 
     if total_score >= 8:
         print ("\n<<<<CONGRATULATIONS, YOU SAVED THE PRESIDENT>>>>")
-        print ("You made it out of the car unharmed with the president. Brutus was destroyed. Once you made it back home, you were treated for your injuries, then was awarded the Medal of Honor from the president himself.")
+        print ("You blew up the other car and took the president with you. Brutus was destroyed. Once you made it back home, you were treated for your injuries, then was awarded the Medal of Honor from the president himself.")
         print ("You are now appointed as the president's personal bodyguard. ")
     else:
         print ("\nSorry, " + name + " you did not save the president. Although you made it out fine, the president has been moved to an unknown base. The S.W.A.T team has taken over the rescue.")

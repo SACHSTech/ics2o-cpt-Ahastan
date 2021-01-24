@@ -224,6 +224,7 @@ if start_game == "Start":
             break
         else:
             print ("You got it wrong. Do not worry. ")
+            ninth_question = input("\nWhat type of malware records everything you type on your computer? ")
     tenth_question = input("\n(True/False) You can apply to medical school with a computer science degree: ")
     if tenth_question == "True":
         print("Excellent, you got it right.")
@@ -233,13 +234,14 @@ if start_game == "Start":
         print ("You got it wrong. ")
     eleventh_question = input ("\nList 1 type of malware (Apart from keyloggers): ")
     for i in range (3):
-        if eleventh_question == "Adware" or "Spyware" or "Virus" or "Worm" or "Trojan" or "Rootkit" or "Backdoors" or "Rouge Security Software" or  "Ransomware" or "Browser Hijacker":
+        if eleventh_question == "Adware" or eleventh_question == "Spyware" or eleventh_question == "Virus" or eleventh_question == "Worm" or eleventh_question == "Trojan" or eleventh_question == "Rootkit" or eleventh_question == "Backdoors" or eleventh_question == "Rouge Security Software" or  eleventh_question == "Ransomware" or eleventh_question == "Browser Hijacker":
             print ("Excellent, you got it correct!")
             score_5 = score_5 + 1
             total_score = total_score + 1
             break
         else:
             print ("You got it wrong")
+            eleventh_question = input ("\nList 1 type of malware (Apart from keyloggers): ")
     
     # Seeing if the user won or not
     print ("\nAlright soldier. Let's see if you saved the president or not.")

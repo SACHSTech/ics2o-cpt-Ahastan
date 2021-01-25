@@ -79,7 +79,7 @@ if start_game.lower() == "start":
         print ("You got the question wrong. Next question.")
     for i in range (3):
         print ("\nA. Provides internet to your household\nB. Protects your network from malicious users and malware\nC. Wirelessly  transmits data\nD. Protects you from fire")
-        fourth_question = input("2. What is the function of a firewall? (Write in caps ex. C) ")
+        fourth_question = input("2. What is the function of a firewall? ")
         if fourth_question.lower() == "b":
             print ("Excellent! You got the second question right.")
             score_2 = score_2 + 1
@@ -90,7 +90,7 @@ if start_game.lower() == "start":
     # Printing user score and asking if they are ready
     print ("\nYour score is " + str(score_2) + "/2 and your total score is " + str(total_score) + "/4.")
     third_level_ready = input ("Are you ready to move onto the next level? (Yes/No) ")
-    while third_level_ready.lower != "yes":
+    while third_level_ready.lower() != "yes":
         third_level_ready =  input("Type Yes when you are ready: ")  
     
     # Introduction to level 3
@@ -136,31 +136,30 @@ if start_game.lower() == "start":
         minigame_introduction =  input("Type Yes when you are ready: ")  
 
     # Introduction to plot twist in the game
-print("\nOh no! It has been found out that the president is no longer at the base you are in. Get to the control room quick!")
-print("You are approaching the contorl room, however the door is locked. In order to unlock the door, you must play the number guessing game.")
+    print("\nOh no! It has been found out that the president is no longer at the base you are in. Get to the control room quick!")
+    print("You are approaching the contorl room, however the door is locked. In order to unlock the door, you must play the number guessing game.")
 
-game = False
-print ("You are now playing number guesssing. You have 3 tries to guess the correcy number.") 
-for i in range (3):
-    my_number = 6
-    guess = int(input("\nEnter a number from 1-10: "))
-    if guess == my_number:
-        print ("Good, you got it correct. You may advance. ")
-        game = True
-        break
-    else:
-        print ("You got it wrong. Try again. ")
-
-while game == False:
-    print ("Oh no! You did not make it past the first game. Run to the other door in order to play another game!")
-    my_code = 1432
-    second_guess = int(input("\nGuess my 4-digit code (Numbers range from 1-4): "))
-    while second_guess != my_code:
-        print ("You got it wrong. Try again. ")
-        second_guess = int(input("Guess my code from 1-4: "))
-    print ("Good, you got it correct.")
-    game = True
-
+    game = False
+    print ("You are now playing number guesssing. You have 3 tries to guess the correcy number.") 
+    for i in range (3):
+        my_number = 6
+        guess = int(input("\nEnter a number from 1-10: "))
+        if guess == my_number:
+            print ("Good, you got it correct. You may advance. ")
+            game = True
+            break
+        else:
+            print ("You got it wrong. Try again. ")
+    
+    while game == False:
+        print ("Oh no! You did not make it past the first game. Run to the other door in order to play another game!")
+        my_code = 1432
+        second_guess = int(input("\nGuess my 4-digit code (Numbers range from 1-4): "))
+        while second_guess != my_code:
+            print ("You got it wrong. Try again. ")
+            second_guess = int(input("Guess my code from 1-4: "))
+            print ("Good, you got it correct.")
+            game = True
 
     # Getting ready for fourth level
     fourth_level_ready = input ("Are you ready to move on? (Yes/No) ")
@@ -201,56 +200,94 @@ while game == False:
     print ("President: Oh thank god you're here " + name + ". I've been trapped here for so long. Quick, untie me and let's get out before Brutus catches us!")
     print("*Unties President*")
 
-
-    print ("\nBrutus: Not so fast soldier. I never said you could take the president. ")
-    print ("FINAL FACEOFF AGAINST BRUTUS! You have three questions, with 3 tries for the first question, 1 try for the second question and 3 tries for the last question")
-    
-    # Asking if they are ready in order to cut off some text (Makes it easier for them to read)
-    questions_fifth_ready = input ("\nReady to face-off against Brutus? (Yes/No) ")
-    while questions_fifth_ready.lower() != "yes":
-        questions_fifth_ready =  input("Type Yes when you are ready to start: ")  
-    
-    # Asking final questions
-    for i in range (3):
-        ninth_question = input("\nWhat type of malware records everything you type on your computer? ")
-        if ninth_question.lower() == "keyloggers":
-            print ("Great, you got the first question right")
+    # Decision to be made
+    print ("Brutus: Not so fast soldier. I never said you could take the president. ")
+    brutus_ready = input("You have the president in your car. Do you choose to drive away, or face-off against Brutus? (Stay/Leave) ")
+    if brutus_ready.lower() == "leave":
+        print("After a high-speed car chase, you escaped Brutus. You brought the president back to Washington where he is safe.")
+        print("<<<<A FEW WEEKS LATER>>>")
+        print("You are currently guarding the white house, and you see something emerging. It seems like a big, muscular man. It seems like Brutus with a grenade!")
+        print("Quickly, you get everyone to saftey and confront Brutus")
+        whitehouse_faceoff = input ("\nReady to face-off against Brutus? (Yes/No) ")
+        while whitehouse_faceoff.lower() != "yes":
+            whitehouse_faceoff =  input("Type Yes when you are ready to start: ")
+        # Asking final questions
+        for i in range (3):
+            ninth_question = input("What type of malware records everything you type on your computer? ")
+            if ninth_question.lower() == "keyloggers":
+                print ("Great, you got the first question right")
+                score_5 = score_5 + 1
+                total_score = total_score + 1
+                break
+            else:
+                print ("You got it wrong. Do not worry. ")
+        tenth_question = input("(True/False) You can apply to medical school with a computer science degree: ")
+        if tenth_question.lower() == "true":
+            print("Excellent, you got it right.")
             score_5 = score_5 + 1
             total_score = total_score + 1
-            break
         else:
-            print ("You got it wrong. Do not worry. ")
-    tenth_question = input("\n(True/False) You can apply to medical school with a computer science degree: ")
-    if tenth_question.lower() == "true":
-        print("Excellent, you got it right.")
-        score_5 = score_5 + 1
-        total_score = total_score + 1
+            print ("You got it wrong. ")
+        
+        for i in range (3):
+            eleventh_question = input ("List 1 type of malware (Apart from keyloggers): ")
+            if eleventh_question.lower() == "adware" or eleventh_question.lower() == "spyware" or eleventh_question.lower() == "virus" or eleventh_question.lower() == "worm" or eleventh_question.lower() == "trojan" or eleventh_question.lower() == "rootkit" or eleventh_question.lower() == "backdoors" or eleventh_question.lower() == "rouge security software" or  eleventh_question.lower() == "ransomware" or eleventh_question.lower() == "browser hijacker":
+                print ("Excellent, you got it correct!")
+                score_5 = score_5 + 1
+                total_score = total_score + 1
+                break
+            else:
+                print ("You got it wrong")
+    
     else:
-        print ("You got it wrong. ")
-    for i in range (3):
-        eleventh_question = input ("\nList 1 type of malware (Apart from keyloggers): ")
-        if eleventh_question.lower() == "adware" or eleventh_question.lower() == "spyware" or eleventh_question.lower() == "virus" or eleventh_question.lower() == "worm" or eleventh_question.lower() == "trojan" or eleventh_question.lower() == "rootkit" or eleventh_question.lower() == "backdoors" or eleventh_question.lower() == "rouge security software" or  eleventh_question.lower() == "ransomware" or eleventh_question.lower() == "browser hijacker":
-            print ("Excellent, you got it correct!")
+        print ("FINAL FACEOFF AGAINST BRUTUS! You have three questions, with 3 tries for the first question, 1 try for the second question and 3 tries for the last question")
+        # Asking if they are ready in order to cut off some text (Makes it easier for them to read)
+        questions_fifth_ready = input ("Ready to face-off against Brutus? (Yes/No) ")
+        while questions_fifth_ready.lower() != "yes":
+            questions_fifth_ready =  input("Type Yes when you are ready to start: ")  
+
+        # Asking final questions
+        for i in range (3):
+            ninth_question = input("What type of malware records everything you type on your computer? ")
+            if ninth_question.lower() == "keyloggers":
+                print ("Great, you got the first question right")
+                score_5 = score_5 + 1
+                total_score = total_score + 1
+                break
+            else:
+                print ("You got it wrong. Do not worry. ")
+        
+        tenth_question = input("(True/False) You can apply to medical school with a computer science degree: ")
+        if tenth_question.lower() == "true":
+            print("Excellent, you got it right.")
             score_5 = score_5 + 1
             total_score = total_score + 1
-            break
         else:
-            print ("You got it wrong")
-    
-    # Seeing if the user won or not
+                print ("You got it wrong. ")
+        
+        for i in range (3):
+            eleventh_question = input ("List 1 type of malware (Apart from keyloggers): ")
+            if eleventh_question.lower() == "adware" or eleventh_question.lower() == "spyware" or eleventh_question.lower() == "virus" or eleventh_question.lower() == "worm" or eleventh_question.lower() == "trojan" or eleventh_question.lower() == "rootkit" or eleventh_question.lower() == "backdoors" or eleventh_question.lower() == "rouge security software" or  eleventh_question.lower() == "ransomware" or eleventh_question.lower() == "browser hijacker":
+                print ("Excellent, you got it correct!")
+                score_5 = score_5 + 1
+                total_score = total_score + 1
+                break
+            else:
+                print ("You got it wrong")
+
     print ("\nAlright soldier. Let's see if you saved the president or not.")
     print ("Your final score was " + str(total_score) + "/11.")
 
-    final_statement_ready = input ("\nAre you ready to move on? (Yes/No) ")
-    while second_level_ready.lower != "yes":
-        second_level_ready =  input("Type Yes when you are ready to hear the results: ") 
+    final_statement_ready = input ("\nReady to review results? (Yes/No) ")
+    while final_statement_ready.lower() != "yes":
+        final_statement_ready =  input("Type Yes when you are ready to start: ")
 
-    if total_score >= 9:
+    if total_score >= 3:
         print ("\n<<<<CONGRATULATIONS, YOU SAVED THE PRESIDENT>>>>")
-        print ("You blew up the other car and took the president with you. Brutus was destroyed. Once you made it back home, you were treated for your injuries, then was awarded the Medal of Honor from the president himself.")
+        print ("Brutus was destroyed by you! You were treated for your injuries, then was awarded the Medal of Honor from the president himself.")
         print ("You are now appointed as the president's personal bodyguard. ")
     else:
-        print ("\nSorry, " + name + " you did not save the president. Although you made it out fine, the president has been moved to an unknown base. The S.W.A.T team has taken over the rescue.")
+        print ("Sorry, you did not save the president. Although you made it out fine, the president has been captured to an unknown base. The team has taken over the rescue.")
     
     # Closing statment
     print ("\n<<<<THANK YOU FOR PLAYING>>>>")

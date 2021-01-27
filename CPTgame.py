@@ -158,8 +158,9 @@ if start_game.lower() == "start":
         while second_guess != my_code:
             print ("You got it wrong. Try again. ")
             second_guess = int(input("Guess my code from 1-4: "))
-            print ("Good, you got it correct.")
-            game = True
+        print ("Good, you got it correct.")
+        game = True
+
 
     # Getting ready for fourth level
     fourth_level_ready = input ("Are you ready to move on? (Yes/No) ")
@@ -291,7 +292,7 @@ if start_game.lower() == "start":
         print ("Brutus was destroyed by you! You were treated for your injuries, then was awarded the Medal of Honor from the president himself.")
         print ("You are now appointed as the president's personal bodyguard. ")
     else:
-        print ("\nSorry, you did not save the president. Although you made it out fine, the president has been captured to an unknown base. The team has taken over the rescue.")
+        print ("\nSorry, you did not save the president. Although you made it out fine, the president has been captured to an unknown base. The CIA has taken over the rescue.")
     
     # Closing statment
     print ("\n<<<<THANK YOU FOR PLAYING>>>>")
